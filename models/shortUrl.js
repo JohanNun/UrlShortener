@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const moment = require('moment')
+const current = moment().format('DD[/]MM[/]YYYY[ - ]HH[:]mm[ ]a');
+
 
 function getrandom() {
     var text = "";
@@ -9,6 +12,7 @@ function getrandom() {
     return text;
 }
 
+//Create the schema in Database
 const shortUrlSchema = new mongoose.Schema({
     fullUrl: {
         type: String,
@@ -20,12 +24,26 @@ const shortUrlSchema = new mongoose.Schema({
         default: () => getrandom()
 
     },
+    personalUrl: {
+        type: String,
+        required: false
+    },
     clicks: {
         type: Number,
         required: true,
         default: 0
+    },
+    dateCreated: {
+        type: String,
+        default: moment()
+    },
+    dateAccessed: {
+        type: String,
+        default: "The link hasn't been clicked yet"
     }
 })
+
+
 
 
 module.exports = mongoose.model('ShortUrl', shortUrlSchema)
