@@ -23,6 +23,7 @@
                 <tr>
                     <th>Full URL</th>
                     <th>Short URL</th>
+                    <th>Customize your URL</th>
                     <th>Stats</th>
                 </tr>
             </thead>
@@ -30,15 +31,20 @@
             <tbody>
                 <% shortUrls.forEach(shortUrl=> { %>
                     <tr>
-                        <td> <a href="<%= shortUrl.fullUrl %>"></a>
+                        <td style="padding-right: 50px"> <a href="<%= shortUrl.fullUrl %>"></a>
                             <%= shortUrl.fullUrl %>
                                 </a>
                         </td>
-                        <td> <a href="<%= shortUrl.shortUrl %>">
+                        <td style="padding-right: 50px"> <a href="<%= shortUrl.shortUrl %>">
                                 <%= shortUrl.shortUrl %>
                             </a> </td>
+
+                        <td style="padding-right: 75px">
+                            <a class="btn btn-outline-success" href="edit/<%= shortUrl.shortUrl %>">Customize</button>
+                                </form>
+                        </td>
                         <td>
-                            <a class="btn btn-info" href="stats/<%= shortUrl.shortUrl %>">View Stats</a>
+                            <a class="btn btn-info" href="stats/<%= shortUrl.shortUrl %>">View</a>
                         </td>
 
                     </tr>

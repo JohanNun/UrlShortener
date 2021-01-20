@@ -22,11 +22,6 @@ const shortUrlSchema = new mongoose.Schema({
         type: String,
         required: true,
         default: () => getrandom()
-
-    },
-    personalUrl: {
-        type: String,
-        required: false
     },
     clicks: {
         type: Number,

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid mt-5">
+
+        <h1 class="text-primary">Customize your short code</h1>
+
+        <div class="table-responsive col-11">
+            <h4 class="mb-3 mt-4">URL</h4>
+            <a>
+                <%= shortUrl.fullUrl %>
+            </a>
+        </div>
+
+
+        <form action="/update" method="POST" class="my-4 form-inline">
+            <div class="form-group ml-3 mt-5">
+                <input type="text" name="shortNew" id="shortNew" minlength="4" value="<%= shortUrl.shortUrl %>">
+
+                <input type="hidden" name="originalShortUrl" value="<%= shortUrl.shortUrl %>">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
