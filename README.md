@@ -1,5 +1,5 @@
 
-<h2> <b>URL-Shortener</b> </h2>
+<h2> <b>Shortster</b> </h2>
 
 <br>
 
